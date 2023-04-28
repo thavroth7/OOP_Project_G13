@@ -12,11 +12,24 @@ export class Flight{
     private arrivalDateTime: DateTime
     private route: Route
     private gate: Gate
-    private aeroplane: Aeroplan
+    private aeroplan: Aeroplan
     private pilot: Pilot
     private coPilot: CoPilot
-    constructor(flightNumber: string, departurePlace: Departure, arrivalPlace: Departure, departureDateTime: DateTime, arrivalDateTime: DateTime)
-    {}
+    constructor(flightNumber: string, departureDateTime: DateTime, 
+        arrivalDateTime: DateTime, route:Route, gate:Gate, aeroplan:Aeroplan, pilot:Pilot, coPilot:CoPilot)
+    {
+        this.flightNumber = flightNumber
+        this.departureDateTime = departureDateTime
+        this.arrivalDateTime = arrivalDateTime
+        this.route = route
+        this.gate = gate
+        this.aeroplan = aeroplan
+        this.pilot = pilot
+        this.coPilot = coPilot
+    }
+    getFlightDate(){
+        return this.departureDateTime
+    }
  
 
 

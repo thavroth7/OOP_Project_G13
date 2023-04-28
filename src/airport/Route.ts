@@ -3,7 +3,12 @@ import { Departure } from "../departure/Departure";
 
 export class Route{
     private flights: Flight[]=[]
-    constructor(departurePlace:Departure, arrivalPlace: Departure){}
+    private departurePlace: Departure
+    private departureArrive:Departure
+    constructor(departurePlace:Departure, departureArrive: Departure){
+        this.departurePlace = departurePlace
+        this.departureArrive = departureArrive
+    }
 
     addFlight(flight:Flight) {
         return this.flights.push(flight)
