@@ -36,9 +36,9 @@ let route = new Route(departure, departure)
 let aeroplane = new Aeroplan("HMA")
 
 
-let shcedeule1 = new DateTime("10/1/2023", "19")
-let shcedeule2 = new DateTime("11/1/2023", "20")
-let shcedeule3 = new DateTime("12/1/2023", "10")
+let schedeule1 = new DateTime("10/1/2023", "19")
+let schedeule2 = new DateTime("11/1/2023", "20")
+let schedeule3 = new DateTime("12/1/2023", "10")
 let arrivalDateTime = new DateTime("13/1/2023", "11")
 
 
@@ -48,15 +48,15 @@ let pilot2 = new Pilot(2,EmployeeCategory.PILOT, "Net Se", 30, Gender.MALE)
 let co_pilot = new CoPilot(EmployeeCategory.PILOT, "Thavroth", 20, Gender.MALE)
 
 //add flight//
-let flight1 = new Flight("003", shcedeule1, arrivalDateTime, route, gate, aeroplane, pilot1, co_pilot)
-let flight2 = new Flight("004", shcedeule2, arrivalDateTime, route, gate, aeroplane, pilot1, co_pilot)
-let flight3 = new Flight("005", shcedeule3, arrivalDateTime, route, gate, aeroplane, pilot1, co_pilot)
-let flight4 = new Flight("00AA", shcedeule3, arrivalDateTime, route, gate, aeroplane, pilot1, co_pilot)
+let flight1 = new Flight("003", schedeule1, arrivalDateTime, route, gate, aeroplane, pilot1, co_pilot)
+let flight2 = new Flight("004", schedeule2, arrivalDateTime, route, gate, aeroplane, pilot1, co_pilot)
+let flight3 = new Flight("005", schedeule3, arrivalDateTime, route, gate, aeroplane, pilot1, co_pilot)
+let flight4 = new Flight("00AA", schedeule3, arrivalDateTime, route, gate, aeroplane, pilot2, co_pilot)
 
 //add Pilot schedule//
-pilot1.addPilotSchedule(shcedeule1)
-pilot1.addPilotSchedule(shcedeule2)
-pilot1.addPilotSchedule(shcedeule3)
+pilot1.addPilotSchedule(schedeule1)
+pilot1.addPilotSchedule(schedeule2)
+pilot1.addPilotSchedule(schedeule3)
 
 //Add Pilot into flight
 pilot1.addFlight(flight1)
