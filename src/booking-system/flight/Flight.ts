@@ -30,6 +30,9 @@ export class Flight{
     getFlightDate(){
         return this.departureDateTime
     }
+    getPilotFromFlight(){
+        return this.pilot.getPilotCardId()
+    }
  
 
 

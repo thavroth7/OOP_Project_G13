@@ -4,38 +4,39 @@ import { Gender } from "../Person";
 import { Employee, EmployeeCategory } from "./Employee";
 
 export class Pilot extends Employee{
+    private cardId: number
     private flights: Flight[]=[]
     private shcedules: DateTime[]=[]
-    constructor(catgory:EmployeeCategory, name: string, age: number, gender: Gender) {
+    constructor(cardId:number ,catgory:EmployeeCategory, name: string, age: number, gender: Gender) {
         super(catgory,name, age, gender);
+        this.cardId = cardId
   
-      }
-
-    addPilotSchedule(newShcedule:DateTime){
-      for(let shcedeule of this.shcedules){
-        if(shcedeule != newShcedule){
-          this.shcedules.push(newShcedule)
-        }
-      }
-     
     }
 
-    getPilotSchedule(){
-       for(let shcedeule of this.shcedules){
-        return shcedeule
-       }
+
+    addPilotSchedule(newShcedule:DateTime){
+          this.shcedules.push(newShcedule)
     }
 
     addFlight(newFlight:Flight){
-          this.flights.push(newFlight)
+      this.flights.push(newFlight)
+
     }
 
-    getPilotFlight(){
+    getPilotCardId(){
+      return this.cardId
+    }
+
+    
+    findPilotFlights(){
       let listFlightForPilot =[]
       for(let flight of this.flights){
-        if(flight.getFlightDate() == this.getPilotSchedule()){
-          listFlightForPilot.push(flight)
+        for(let shcedeule of this.shcedules){
+          if((flight.getFlightDate() == shcedeule  && flight.getPilotFromFlight() == this.getPilotCardId() )){
+            listFlightForPilot.push(flight)
+          }
         }
+        
       }
       return listFlightForPilot
     }
