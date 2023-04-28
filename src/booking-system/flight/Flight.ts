@@ -17,6 +17,7 @@ export class Flight{
     private coPilot: CoPilot
     constructor(flightNumber: string, departurePlace: Departure, arrivalPlace: Departure, departureDateTime: DateTime, arrivalDateTime: DateTime)
     {}
+ 
 
 
 }

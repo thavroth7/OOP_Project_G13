@@ -4,12 +4,12 @@ import { BookingTrip } from "./trip/BookingTrip"
 
 export class BookingSystem{
     private bookingReferenceNumber: string
+    private price: number
+    private bookingTrip: BookingTrip[]=[]
     private passengers: Passenger[]=[]
-    private trips: BookingTrip[]=[]
+   
     constructor(bookingReferenceNumber: string){
         this.bookingReferenceNumber=bookingReferenceNumber
     }
-
-
-
+   
 }
