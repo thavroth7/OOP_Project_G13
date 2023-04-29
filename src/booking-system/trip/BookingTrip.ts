@@ -40,9 +40,7 @@ export class BookingTrip{
         return this.passengers
     }
 
-    getReturnTicket(){
-        return TypeOfTicket.RETURN_TICKET
-    }
+    
 
     getGateFromFlight(){
         let gateOfFlight = []
@@ -51,4 +49,14 @@ export class BookingTrip{
         }
         return gateOfFlight
     }
+
+    setTypeTicket(newTypeTicket:TypeOfTicket){
+        this.typeOfTicket = newTypeTicket
+
+    }
+
+    getReturnTicket(){
+        return this.typeOfTicket
+    }
+
 }

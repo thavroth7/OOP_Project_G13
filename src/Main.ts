@@ -83,16 +83,37 @@ let passenger3 = new Passenger("Suga", 30, Gender.MALE)
 //crate booking//
 let bag = new Bag(10)
 let bookingTrip = new BookingTrip( "AAS",1000,passenger1 ,departurePlace, arrivePlace, TypeOfTicket.RETURN_TICKET)
+let bookingTrip1 = new BookingTrip( "AAS",1000,passenger1 ,departurePlace, arrivePlace, TypeOfTicket.RETURN_TICKET)
+let bookingTrip2 = new BookingTrip( "AAS",1000,passenger1 ,departurePlace, arrivePlace, TypeOfTicket.RETURN_TICKET)
+let bookingTrip3 = new BookingTrip( "AAS",1000,passenger1 ,departurePlace, arrivePlace, TypeOfTicket.SINGLE_TICKET)
+let bookingTrip4 = new BookingTrip( "AAS",1000,passenger1 ,departurePlace, arrivePlace, TypeOfTicket.SINGLE_TICKET)
+//set bag
 bookingTrip.setBag(bag)
+
+// add flight into trip
 bookingTrip.addBookingFlight(flight1)
 bookingTrip.addBookingFlight(flight2)
+
+//add trip to passenger
+passenger1.addTrip(bookingTrip)
 let airport = new Airport("Phnom Penh International Airport")
- airport.addBookingTrip(bookingTrip)
+airport.addBookingTrip(bookingTrip)
+
+//find passenger's trip
 //  console.log(airport.findPassengerTrip(passenger1))
 
-passenger1.addTrip(bookingTrip)
+
+
+//create Airline//--------------------------------
+airline1.addBookingTrip(bookingTrip)
+airline1.addBookingTrip(bookingTrip1)
+airline1.addBookingTrip(bookingTrip2)
+airline1.addBookingTrip(bookingTrip3)
 //Find gate that passenger will go//
-console.log(passenger1.findGate())
+// console.log(passenger1.findGate())
+
+//find number of passenger that booked return ticket//
+console.log(airline1.findPassengerBookedReturnTicket())
 
 
 

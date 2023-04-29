@@ -6,6 +6,7 @@ import { Time } from "../../date-time/Time"
 
 import { CoPilot } from "../../human/employee/Co-pilot"
 import { Pilot } from "../../human/employee/Pilot"
+import { Meal } from "./Meal"
 
 export class Flight{
     private flightNumber: string
@@ -17,6 +18,7 @@ export class Flight{
     private aeroplan: Aeroplan
     private pilot: Pilot
     private coPilot: CoPilot
+    private meal:Meal
     constructor(flightNumber: string, date: Date, departureTime: Time, 
         arrivalTime: Time, route:Route, gate:Gate, aeroplan:Aeroplan, pilot:Pilot, coPilot:CoPilot)
     {
@@ -40,6 +42,14 @@ export class Flight{
 
     getGate(){
         return this.gate
+    }
+
+    setMeal(meal:Meal){
+        this.meal = meal
+    }
+
+    getMeal(){
+        return this.meal
     }
 
 }
