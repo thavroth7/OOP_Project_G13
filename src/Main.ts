@@ -6,15 +6,19 @@
 
 import { Airline } from "./airline/Airline";
 import { Aeroplan } from "./airline/aeroplan/Aeroplan";
+import { Airport } from "./airport/Airport";
 import { Gate } from "./airport/Gate";
 import { Route } from "./airport/Route";
 import { Flight } from "./booking-system/flight/Flight";
+import { Bag } from "./booking-system/trip/Bag";
+import { BookingTrip, TypeOfTicket } from "./booking-system/trip/BookingTrip";
 import { DateTime } from "./date-time/DateTime";
 import { Departure } from "./departure/Departure";
 import { Gender } from "./human/Person";
 import { CoPilot } from "./human/employee/Co-pilot";
 import { Employee, EmployeeCategory } from "./human/employee/Employee";
 import { Pilot } from "./human/employee/Pilot";
+import { Passenger } from "./human/passenger/Passenger";
 
 
 
@@ -82,3 +86,17 @@ airline1.addEmployee(employee2)
 
 //Find salary that Airline pay for all Employee//----------------------------------------------------//
 console.log(airline1.findSalaryForAllEmployees())
+
+//add passenger//
+let passenger1 = new Passenger("Jimin", 27, Gender.MALE)
+let passenger2 = new Passenger("Suga", 30, Gender.MALE)
+let passenger3 = new Passenger("Suga", 30, Gender.MALE)
+
+//crate booking//
+let bag = new Bag(10)
+let bookingTrip = new BookingTrip( "AAS",1000,passenger1 ,departure,departure, TypeOfTicket.RETURN_TICKET)
+bookingTrip.setBag(bag)
+ let airport = new Airport("PP")
+
+ airport.addBookingTrip(bookingTrip)
+ console.log(airport.findPassengerTrip(passenger1))
