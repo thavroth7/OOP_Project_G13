@@ -4,6 +4,7 @@
 // import { BookingTrip, TypeOfTicket } from "./booking-system/trip/BookingTrip";
 // import { Departure } from "./departure/Departure";
 
+import { Airline } from "./airline/Airline";
 import { Aeroplan } from "./airline/aeroplan/Aeroplan";
 import { Gate } from "./airport/Gate";
 import { Route } from "./airport/Route";
@@ -12,7 +13,7 @@ import { DateTime } from "./date-time/DateTime";
 import { Departure } from "./departure/Departure";
 import { Gender } from "./human/Person";
 import { CoPilot } from "./human/employee/Co-pilot";
-import { EmployeeCategory } from "./human/employee/Employee";
+import { Employee, EmployeeCategory } from "./human/employee/Employee";
 import { Pilot } from "./human/employee/Pilot";
 
 
@@ -64,4 +65,20 @@ pilot1.addFlight(flight2)
 pilot1.addFlight(flight3)
 pilot1.addFlight(flight4)
 
+//find Pilot flights//------------------------------------------------------------------///
 console.log(pilot1.findPilotFlights())
+
+
+
+let employee1 = new Employee(EmployeeCategory.PILOT,"Hay",20,Gender.FEMALE)
+employee1.setSalary(1000)
+
+let employee2 = new Employee(EmployeeCategory.CO_PILOT,"Thavroth",20,Gender.FEMALE)
+employee2.setSalary(2000)
+
+let airline1= new Airline("Angkor Airline")
+airline1.addEmployee(employee1)
+airline1.addEmployee(employee2)
+
+//Find salary that Airline pay for all Employee//----------------------------------------------------//
+console.log(airline1.findSalaryForAllEmployees())
