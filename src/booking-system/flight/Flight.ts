@@ -1,7 +1,7 @@
 import { Aeroplan } from "../../airline/aeroplan/Aeroplan"
 import { Gate } from "../../airport/Gate"
 import { Route } from "../../airport/Route"
-import { DateTime } from "../../date-time/DateTime"
+import { DateTime } from "../../date-time/Time"
 import { Departure } from "../../departure/Departure"
 import { CoPilot } from "../../human/employee/Co-pilot"
 import { Pilot } from "../../human/employee/Pilot"

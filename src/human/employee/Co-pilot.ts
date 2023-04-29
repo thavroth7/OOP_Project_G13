@@ -1,5 +1,5 @@
 import { Flight } from "../../booking-system/flight/Flight";
-import { DateTime } from "../../date-time/DateTime";
+import { DateTime } from "../../date-time/Time";
 import { Gender } from "../Person";
 import { Employee, EmployeeCategory } from "./Employee";
 

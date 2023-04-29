@@ -12,7 +12,7 @@ import { Route } from "./airport/Route";
 import { Flight } from "./booking-system/flight/Flight";
 import { Bag } from "./booking-system/trip/Bag";
 import { BookingTrip, TypeOfTicket } from "./booking-system/trip/BookingTrip";
-import { DateTime } from "./date-time/DateTime";
+import { DateTime } from "./date-time/Time";
 import { Departure } from "./departure/Departure";
 import { Gender } from "./human/Person";
 import { CoPilot } from "./human/employee/Co-pilot";
@@ -96,7 +96,8 @@ let passenger3 = new Passenger("Suga", 30, Gender.MALE)
 let bag = new Bag(10)
 let bookingTrip = new BookingTrip( "AAS",1000,passenger1 ,departure,departure, TypeOfTicket.RETURN_TICKET)
 bookingTrip.setBag(bag)
- let airport = new Airport("PP")
+let airport = new Airport("Phnom Penh International Airport")
 
  airport.addBookingTrip(bookingTrip)
+//find passenger trip
  console.log(airport.findPassengerTrip(passenger1))
