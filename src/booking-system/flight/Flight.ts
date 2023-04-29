@@ -37,4 +37,9 @@ export class Flight{
     getPilotFromFlight(){
         return this.pilot.getPilotCardId()
     }
+
+    getGate(){
+        return this.gate
+    }
+
 }

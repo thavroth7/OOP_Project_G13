@@ -1,8 +1,3 @@
-// import { BookingFlight } from "./booking-system/booking-flight/BookingFlight";
-// import { Meal } from "./booking-system/booking-flight/Meal";
-// import { Flight } from "./booking-system/flight/Flight";
-// import { BookingTrip, TypeOfTicket } from "./booking-system/trip/BookingTrip";
-// import { Departure } from "./departure/Departure";
 
 import { Airline } from "./airline/Airline";
 import { Aeroplan } from "./airline/aeroplan/Aeroplan";
@@ -32,7 +27,9 @@ import { Passenger } from "./human/passenger/Passenger";
 let departurePlace = new Departure("Phnom Penh", "Cambodia");
 let arrivePlace = new Departure("Seoul", "South Korea");
 
-let gate = new Gate("2A")
+let gate1 = new Gate("2A")
+let gate2 = new Gate("001")
+
 let route = new Route(departurePlace, arrivePlace)
 let aeroplane = new Aeroplan("HMA")
 
@@ -50,13 +47,13 @@ let pilot2 = new Pilot(2,EmployeeCategory.PILOT, "Net Se", 30, Gender.MALE)
 let co_pilot = new CoPilot(EmployeeCategory.PILOT, "Thavroth", 20, Gender.MALE)
 
 //add flight//
-let flight1 = new Flight("001", date1, departureTime, arriveTime, route, gate, aeroplane, pilot1, co_pilot)
-let flight2 = new Flight("002", date1, departureTime, arriveTime, route, gate, aeroplane, pilot1, co_pilot)
-let flight3 = new Flight("003", date2, departureTime, arriveTime, route, gate, aeroplane, pilot1, co_pilot)
-let flight4 = new Flight("004", date3, departureTime, arriveTime, route, gate, aeroplane, pilot1, co_pilot)
+let flight1 = new Flight("001", date1, departureTime, arriveTime, route, gate1, aeroplane, pilot1, co_pilot)
+let flight2 = new Flight("002", date1, departureTime, arriveTime, route, gate1, aeroplane, pilot1, co_pilot)
+let flight3 = new Flight("003", date2, departureTime, arriveTime, route, gate2, aeroplane, pilot1, co_pilot)
+let flight4 = new Flight("004", date3, departureTime, arriveTime, route, gate2, aeroplane, pilot1, co_pilot)
 
-//add Pilot schedule//
-
+gate1.addFilght(flight1)
+gate1.addFilght(flight2)
 
 //Add Pilot into flight
 pilot1.addFlight(flight1)
@@ -64,7 +61,7 @@ pilot1.addFlight(flight2)
 pilot1.addFlight(flight3)
 pilot1.addFlight(flight4)
 
-console.log(pilot1.findPilotFlights(date1))
+// console.log(pilot1.findPilotFlights(date1))
 
 
 let employee1 = new Employee(EmployeeCategory.PILOT,"Hay",20,Gender.FEMALE)
@@ -87,10 +84,15 @@ let passenger3 = new Passenger("Suga", 30, Gender.MALE)
 let bag = new Bag(10)
 let bookingTrip = new BookingTrip( "AAS",1000,passenger1 ,departurePlace, arrivePlace, TypeOfTicket.RETURN_TICKET)
 bookingTrip.setBag(bag)
+bookingTrip.addBookingFlight(flight1)
+bookingTrip.addBookingFlight(flight2)
 let airport = new Airport("Phnom Penh International Airport")
-
  airport.addBookingTrip(bookingTrip)
 //  console.log(airport.findPassengerTrip(passenger1))
+
+passenger1.addTrip(bookingTrip)
+//Find gate that passenger will go//
+console.log(passenger1.findGate())
 
 
 

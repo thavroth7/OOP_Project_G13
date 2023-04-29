@@ -43,4 +43,12 @@ export class BookingTrip{
     getReturnTicket(){
         return TypeOfTicket.RETURN_TICKET
     }
+
+    getGateFromFlight(){
+        let gateOfFlight = []
+        for(let flight of this.flights){
+            gateOfFlight.push(flight.getGate())
+        }
+        return gateOfFlight
+    }
 }
