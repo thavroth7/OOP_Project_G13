@@ -59,4 +59,5 @@ export class BookingTrip{
         return this.typeOfTicket
     }
 
+
 }

@@ -49,7 +49,6 @@ export class Flight{
         this.meal = meal
     }
 
-
     getMeal(){
         return this.meal
     }

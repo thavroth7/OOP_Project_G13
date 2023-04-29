@@ -1,5 +1,5 @@
 
-import { BookingTrip } from "../booking-system/trip/BookingTrip"
+import { BookingTrip } from "../booking-trip/booking/BookingTrip"
 import { Passenger } from "../human/passenger/Passenger"
 import { Gate } from "./Gate"
 import { Route } from "./Route"

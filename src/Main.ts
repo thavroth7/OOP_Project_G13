@@ -5,10 +5,10 @@ import { Airport } from "./airport/Airport";
 import { Gate } from "./airport/Gate";
 import { Route } from "./airport/Route";
 
-import { Flight } from "./booking-system/flight/Flight";
-import { Meal } from "./booking-system/flight/Meal";
-import { Bag } from "./booking-system/trip/Bag";
-import { BookingTrip, TypeOfTicket } from "./booking-system/trip/BookingTrip";
+import { Flight } from "./booking-trip/flight/Flight";
+import { Meal } from "./booking-trip/flight/Meal";
+import { Bag } from "./booking-trip/booking/Bag";
+import { BookingTrip, TypeOfTicket } from "./booking-trip/booking/BookingTrip";
 import { Date } from "./date-time/Date";
 import { Time } from "./date-time/Time";
 
@@ -60,9 +60,6 @@ let flight4 = new Flight("004", date3, departureTime, arriveTime, route, gate2, 
 flight1.setMeal(meal1)
 flight2.setMeal(meal1)
 
-console.log(flight1)
-
-
 gate1.addFilght(flight1)
 gate1.addFilght(flight2)
 
@@ -91,26 +88,29 @@ let passenger1 = new Passenger("Jimin", 27, Gender.MALE)
 let passenger2 = new Passenger("Suga", 30, Gender.MALE)
 let passenger3 = new Passenger("Suga", 30, Gender.MALE)
 passenger1.setMeal(meal1)
-passenger2.setMeal(meal3)
+passenger3.setMeal(meal1)
+passenger2.setMeal(meal1)
 
-console.log(passenger1)
 
 //crate booking//
 let bag = new Bag(10)
 let bookingTrip = new BookingTrip( "AAS",1000,passenger1 ,departurePlace, arrivePlace, TypeOfTicket.RETURN_TICKET)
 let bookingTrip1 = new BookingTrip( "AAS",1000,passenger1 ,departurePlace, arrivePlace, TypeOfTicket.RETURN_TICKET)
 let bookingTrip2 = new BookingTrip( "AAS",1000,passenger1 ,departurePlace, arrivePlace, TypeOfTicket.RETURN_TICKET)
-let bookingTrip3 = new BookingTrip( "AAS",1000,passenger1 ,departurePlace, arrivePlace, TypeOfTicket.SINGLE_TICKET)
-let bookingTrip4 = new BookingTrip( "AAS",1000,passenger1 ,departurePlace, arrivePlace, TypeOfTicket.SINGLE_TICKET)
+let bookingTrip3 = new BookingTrip( "AAS",1000,passenger2 ,departurePlace, arrivePlace, TypeOfTicket.SINGLE_TICKET)
+let bookingTrip4 = new BookingTrip( "AAS",1000,passenger2 ,departurePlace, arrivePlace, TypeOfTicket.SINGLE_TICKET)
 //set bag
 bookingTrip.setBag(bag)
 
 // add flight into trip
 bookingTrip.addBookingFlight(flight1)
-bookingTrip.addBookingFlight(flight2)
+bookingTrip1.addBookingFlight(flight2)
+bookingTrip2.addBookingFlight(flight3)
 
 //add trip to passenger
 passenger1.addTrip(bookingTrip)
+
+//create airport
 let airport = new Airport("Phnom Penh International Airport")
 airport.addBookingTrip(bookingTrip)
 
@@ -128,6 +128,7 @@ airline1.addPassenger(passenger2)
 airline1.addPassenger(passenger1)
 airline1.addPassenger(passenger3)
 airline1.addFlight(flight1)
+airline1.addFlight(flight2)
 
 //Find gate that passenger will go//
 // console.log(passenger1.findGate())

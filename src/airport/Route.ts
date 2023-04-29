@@ -1,4 +1,4 @@
-import { Flight } from "../booking-system/flight/Flight";
+import { Flight } from "../booking-trip/flight/Flight";
 import { Departure } from "../departure/Departure";
 
 export class Route{

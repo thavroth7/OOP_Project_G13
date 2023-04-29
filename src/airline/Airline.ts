@@ -1,5 +1,5 @@
-import { Flight } from "../booking-system/flight/Flight"
-import { BookingTrip } from "../booking-system/trip/BookingTrip"
+import { Flight } from "../booking-trip/flight/Flight"
+import { BookingTrip } from "../booking-trip/booking/BookingTrip"
 import { Employee } from "../human/employee/Employee"
 import { Passenger } from "../human/passenger/Passenger"
 import { Aeroplan } from "./aeroplan/Aeroplan"

@@ -1,5 +1,5 @@
-import { Meal } from "../../booking-system/flight/Meal";
-import { BookingTrip } from "../../booking-system/trip/BookingTrip";
+import { Meal } from "../../booking-trip/flight/Meal";
+import { BookingTrip } from "../../booking-trip/booking/BookingTrip";
 import { Gender, Person } from "../Person";
 
 export class Passenger extends Person{

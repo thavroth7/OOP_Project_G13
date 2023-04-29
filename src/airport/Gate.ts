@@ -1,4 +1,4 @@
-import { Flight } from "../booking-system/flight/Flight"
+import { Flight } from "../booking-trip/flight/Flight"
 import { Date } from "../date-time/Date"
 
 export class Gate{
