@@ -6,6 +6,7 @@ import { Gate } from "./airport/Gate";
 import { Route } from "./airport/Route";
 
 import { Flight } from "./booking-system/flight/Flight";
+import { Meal } from "./booking-system/flight/Meal";
 import { Bag } from "./booking-system/trip/Bag";
 import { BookingTrip, TypeOfTicket } from "./booking-system/trip/BookingTrip";
 import { Date } from "./date-time/Date";
@@ -46,11 +47,21 @@ let pilot1 = new Pilot(1,EmployeeCategory.PILOT, "Thavroth", 20, Gender.MALE)
 let pilot2 = new Pilot(2,EmployeeCategory.PILOT, "Net Se", 30, Gender.MALE)
 let co_pilot = new CoPilot(EmployeeCategory.PILOT, "Thavroth", 20, Gender.MALE)
 
+//create meal
+let meal1 = Meal.DAIRYFREE
+let meal2 = Meal.HALAL
+let meal3 = Meal.KOSHER
+
 //add flight//
 let flight1 = new Flight("001", date1, departureTime, arriveTime, route, gate1, aeroplane, pilot1, co_pilot)
 let flight2 = new Flight("002", date1, departureTime, arriveTime, route, gate1, aeroplane, pilot1, co_pilot)
 let flight3 = new Flight("003", date2, departureTime, arriveTime, route, gate2, aeroplane, pilot1, co_pilot)
 let flight4 = new Flight("004", date3, departureTime, arriveTime, route, gate2, aeroplane, pilot1, co_pilot)
+flight1.setMeal(meal1)
+flight2.setMeal(meal1)
+
+console.log(flight1)
+
 
 gate1.addFilght(flight1)
 gate1.addFilght(flight2)
@@ -79,6 +90,10 @@ airline1.addEmployee(employee2)
 let passenger1 = new Passenger("Jimin", 27, Gender.MALE)
 let passenger2 = new Passenger("Suga", 30, Gender.MALE)
 let passenger3 = new Passenger("Suga", 30, Gender.MALE)
+passenger1.setMeal(meal1)
+passenger2.setMeal(meal3)
+
+console.log(passenger1)
 
 //crate booking//
 let bag = new Bag(10)
@@ -99,7 +114,7 @@ passenger1.addTrip(bookingTrip)
 let airport = new Airport("Phnom Penh International Airport")
 airport.addBookingTrip(bookingTrip)
 
-//find passenger's trip
+//find passenger's trip//
 //  console.log(airport.findPassengerTrip(passenger1))
 
 
@@ -109,11 +124,19 @@ airline1.addBookingTrip(bookingTrip)
 airline1.addBookingTrip(bookingTrip1)
 airline1.addBookingTrip(bookingTrip2)
 airline1.addBookingTrip(bookingTrip3)
+airline1.addPassenger(passenger2)
+airline1.addPassenger(passenger1)
+airline1.addPassenger(passenger3)
+airline1.addFlight(flight1)
+
 //Find gate that passenger will go//
 // console.log(passenger1.findGate())
 
 //find number of passenger that booked return ticket//
-console.log(airline1.findPassengerBookedReturnTicket())
+// console.log(airline1.findPassengerBookedReturnTicket())
+
+//find type of meal Chef need to prepare for a given flight//--------------
+console.log(airline1.findTypeOfMeal(flight1))
 
 
 

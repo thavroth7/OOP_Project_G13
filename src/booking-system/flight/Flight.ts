@@ -44,9 +44,11 @@ export class Flight{
         return this.gate
     }
 
+
     setMeal(meal:Meal){
         this.meal = meal
     }
+
 
     getMeal(){
         return this.meal
