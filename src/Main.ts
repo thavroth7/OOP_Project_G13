@@ -26,24 +26,17 @@ import { Passenger } from "./human/passenger/Passenger";
 
 
 
-// let flight = new Flight("003")
 
-// //booking Trip
-let departure = new Departure("Phnom Pench", "South Korea");
 
-// let bookingTrip = new BookingTrip(departure,departure, TypeOfTicket.RETURN_TICKET)
-// bookingTrip.addBookingFlight(bookingFlight)
-// bookingTrip.addBookingFlight(bookingFlight)
 
-// console.log(bookingTrip)
+let departurePlace = new Departure("Phnom Penh", "Cambodia");
+let arrivePlace = new Departure("Seoul", "South Korea");
 
 let gate = new Gate("2A")
-
-let route = new Route(departure, departure)
-
+let route = new Route(departurePlace, arrivePlace)
 let aeroplane = new Aeroplan("HMA")
 
-
+//create Date Time
 let date1 = new Date("10/1/2023")
 let date2 = new Date("11/1/2023")
 let date3 = new Date("12/1/2023")
@@ -73,24 +66,6 @@ pilot1.addFlight(flight4)
 
 console.log(pilot1.findPilotFlights(date1))
 
-// let bookingFlight1 = new BookingFlight(flight1)
-// let bookingFlight2 = new BookingFlight(flight2)
-
-// let bookingFlight2 = new BookingFlight(flight1)
-
-// let VEGAN = Meal.VEGAN
-// let TEA = Meal.HALAL
-
-// bookingFlight1.setMeal(TEA)
-// bookingFlight2.setMeal(VEGAN)
-
-// console.log(bookingFlight)
-
-
-// bookingTrip.addBookingFlight(bookingFlight1)
-// bookingTrip.addBookingFlight(bookingFlight2)
-// console.log(bookingTrip)
-
 
 let employee1 = new Employee(EmployeeCategory.PILOT,"Hay",20,Gender.FEMALE)
 employee1.setSalary(1000)
@@ -110,9 +85,9 @@ let passenger3 = new Passenger("Suga", 30, Gender.MALE)
 
 //crate booking//
 let bag = new Bag(10)
-let bookingTrip = new BookingTrip( "AAS",1000,passenger1 ,departure,departure, TypeOfTicket.RETURN_TICKET)
+let bookingTrip = new BookingTrip( "AAS",1000,passenger1 ,departurePlace, arrivePlace, TypeOfTicket.RETURN_TICKET)
 bookingTrip.setBag(bag)
- let airport = new Airport("Phnom Penh International Airport")
+let airport = new Airport("Phnom Penh International Airport")
 
  airport.addBookingTrip(bookingTrip)
 //  console.log(airport.findPassengerTrip(passenger1))
