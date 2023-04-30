@@ -5,17 +5,21 @@ import { Employee, EmployeeCategory } from "./Employee";
 
 export class Pilot extends Employee{
     private cardId: number
+    private shcedule: Date[]=[]
     private flights: Flight[]=[]
     constructor(cardId:number ,catgory:EmployeeCategory, name: string, age: number, gender: Gender) {
         super(catgory,name, age, gender);
         this.cardId = cardId
   
     }
-
+  
     addFlight(newFlight:Flight){
       this.flights.push(newFlight)
 
     }
+    addShcedule(shcedeule: Date) {
+      return this.shcedule.push(shcedeule)
+  }
 
     getPilotCardId(){
       return this.cardId

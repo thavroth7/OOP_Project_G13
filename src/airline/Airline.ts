@@ -1,7 +1,6 @@
 import { Flight } from "../booking-trip/flight/Flight"
 import { BookingTrip } from "../booking-trip/booking/BookingTrip"
 import { Employee } from "../human/employee/Employee"
-import { Passenger } from "../human/passenger/Passenger"
 import { Aeroplan } from "./aeroplan/Aeroplan"
 export class Airline{
     private name: string
@@ -9,7 +8,7 @@ export class Airline{
     private employees: Employee[]=[]
     private bookingTrip: BookingTrip[]=[]
     private flights: Flight[] = []
-    private passengers: Passenger[] = []
+ 
 
     constructor(name: string){
         this.name = name
@@ -27,13 +26,15 @@ export class Airline{
         this.bookingTrip.push(booking)
     }
 
-    addPassenger(passenger:Passenger){
-        this.passengers.push(passenger)
-    }
+   
 
     addFlight(flight:Flight){
         this.flights.push(flight)
 
+    }
+
+    getBookingTrip(){
+        return this.bookingTrip
     }
 
     findSalaryForAllEmployees(){
@@ -45,6 +46,7 @@ export class Airline{
         return salaryForEmployee
 
     }
+
     findPassengerBookedReturnTicket(){
         let numberOfPassenger = 0
         for(let booking of this.bookingTrip){
@@ -59,8 +61,8 @@ export class Airline{
 
     findTypeOfMeal(flight:Flight){
         let listOfMeal = []
-        for(let passenger of this.passengers){
-            if(passenger.getMeal() == flight.getMeal()){
+        for(let trip of this.bookingTrip){
+            if(trip.getPassenger().getMeal()== flight.getMeal()){
                 listOfMeal.push(flight.getMeal())
             }
         }

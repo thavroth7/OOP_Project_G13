@@ -69,8 +69,7 @@ pilot1.addFlight(flight2)
 pilot1.addFlight(flight3)
 pilot1.addFlight(flight4)
 
-//Find Pilot's flight for given day//
-console.log(pilot1.findPilotFlights(date1))
+
 
 //create employee//------
 let employee1 = new Employee(EmployeeCategory.PILOT,"Hay",20,Gender.FEMALE)
@@ -84,8 +83,7 @@ let airline1= new Airline("Angkor Airline")
 airline1.addEmployee(employee1)
 airline1.addEmployee(employee2)
 
-//find all employee salary that airline need to pay//
-console.log(airline1.findSalaryForAllEmployees())
+
 
 //Create passenger//
 let passenger1 = new Passenger("Jimin", 27, Gender.MALE)
@@ -116,10 +114,9 @@ passenger1.addTrip(bookingTrip)
 
 //create airport
 let airport = new Airport("Phnom Penh International Airport")
-airport.addBookingTrip(bookingTrip)
+airport.addAirline(airline1)
 
-//find passenger's trip//
- console.log(airport.findPassengerTrip(passenger1))
+
 
 
 
@@ -128,11 +125,14 @@ airline1.addBookingTrip(bookingTrip)
 airline1.addBookingTrip(bookingTrip1)
 airline1.addBookingTrip(bookingTrip2)
 airline1.addBookingTrip(bookingTrip3)
-airline1.addPassenger(passenger2)
-airline1.addPassenger(passenger1)
-airline1.addPassenger(passenger3)
 airline1.addFlight(flight1)
 airline1.addFlight(flight2)
+
+//Find Pilot's flight for given day//
+console.log(pilot1.findPilotFlights(date1))
+
+//find all employee salary that airline need to pay//
+console.log(airline1.findSalaryForAllEmployees())
 
 //Find gate that passenger will go//
 console.log(passenger1.findGate())
@@ -142,6 +142,9 @@ console.log(airline1.findPassengerBookedReturnTicket())
 
 //find type of meal Chef need to prepare for a given flight//--------------
 console.log(airline1.findTypeOfMeal(flight1))
+
+//find passenger's trip//
+console.log(airport.findPassengerTrip(passenger1))
 
 
 
