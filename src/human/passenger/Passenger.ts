@@ -3,7 +3,7 @@ import { BookingTrip } from "../../booking-trip/booking/BookingTrip";
 import { Gender, Person } from "../Person";
 
 export class Passenger extends Person{
-    private bookingTrips: BookingTrip
+    private bookingTrips: BookingTrip[]=[]
     private meal: Meal
     constructor(
         name: string,
@@ -14,11 +14,15 @@ export class Passenger extends Person{
       }
 
       addTrip(trip: BookingTrip){
-        this.bookingTrips = trip
+        this.bookingTrips.push(trip)
       }
 
       findGate(){
-          return this.bookingTrips.getGateFromFlight()
+        let gateOfdifferentFlights = []
+          for(let trip of this.bookingTrips){
+            gateOfdifferentFlights.push(trip.getGateFromFlight())
+          }
+        return gateOfdifferentFlights
       }
 
       setMeal(meal:Meal){
